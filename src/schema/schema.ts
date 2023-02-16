@@ -1,13 +1,17 @@
 import { GraphQLObjectType, GraphQLSchema } from 'graphql';
-import ClientsField from './client.schema';
-import ClientField from './client.schema';
+import ClientSchema from './client/client.schema';
+import ClientsSchema from './client/clients.schema';
+import ProjectSchema from './project/project.schema';
+import ProjectsSchema from './project/projects.schema';
 
 const schema = new GraphQLSchema({
     query: new GraphQLObjectType({
         name: 'RootQueryType',
         fields: {
-            clients: ClientsField,
-            client: ClientField,
+            clients: ClientsSchema,
+            client: ClientSchema,
+            projects: ProjectsSchema,
+            project: ProjectSchema,
         },
     }),
 });

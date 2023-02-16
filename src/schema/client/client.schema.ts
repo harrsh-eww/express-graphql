@@ -1,8 +1,8 @@
 import { GraphQLFieldConfig, GraphQLID } from 'graphql';
-import { clients } from '../sampleData';
-import ClientType from '../type/client.type';
+import { clients } from '../../sampleData';
+import ClientType from '../../type/client.type';
 
-const ClientField: GraphQLFieldConfig<any, any, any> = {
+const ClientSchema: GraphQLFieldConfig<any, any, any> = {
     type: ClientType,
     args: {
         id: {
@@ -14,4 +14,4 @@ const ClientField: GraphQLFieldConfig<any, any, any> = {
     },
 };
 
-export default ClientField;
+export default ClientSchema;
