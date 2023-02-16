@@ -1,1 +1,1 @@
-# express-graphql
+# Express GraphQL
