@@ -12,7 +12,7 @@ const ClientType = new GraphQLObjectType({
         email: {
             type: GraphQLString,
         },
-        phone: {
+        contactNumber: {
             type: GraphQLString,
         },
     }),

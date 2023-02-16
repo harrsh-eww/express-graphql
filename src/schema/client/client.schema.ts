@@ -1,5 +1,5 @@
 import { GraphQLFieldConfig, GraphQLID } from 'graphql';
-import { clients } from '../../sampleData';
+import { prisma } from '../../providers/db';
 import ClientType from '../../type/client.type';
 
 const ClientSchema: GraphQLFieldConfig<any, any, any> = {
@@ -9,8 +9,13 @@ const ClientSchema: GraphQLFieldConfig<any, any, any> = {
             type: GraphQLID,
         },
     },
-    resolve(parent, args) {
-        return clients.find((client) => client.id === args.id);
+    async resolve(parent, args) {
+        const client = await prisma.client.findFirst({
+            where: {
+                id: args.id,
+            },
+        });
+        return client;
     },
 };
 
