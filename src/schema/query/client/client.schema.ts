@@ -1,9 +1,9 @@
 import { GraphQLFieldConfig, GraphQLID } from 'graphql';
-import { prisma } from '../../providers/db';
-import ClientType from '../../type/client.type';
+import { prisma } from '../../../providers/db';
+import ClientCommonType from '../../../type/clientCommon.type';
 
 const ClientSchema: GraphQLFieldConfig<any, any, any> = {
-    type: ClientType,
+    type: ClientCommonType,
     args: {
         id: {
             type: GraphQLID,
@@ -15,7 +15,11 @@ const ClientSchema: GraphQLFieldConfig<any, any, any> = {
                 id: args.id,
             },
         });
-        return client;
+        return {
+            result: client,
+            message: 'Details fetched successfully',
+            status: 200,
+        };
     },
 };
 

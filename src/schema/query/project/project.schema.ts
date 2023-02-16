@@ -1,6 +1,6 @@
 import { GraphQLFieldConfig, GraphQLID } from 'graphql';
-import { projects } from '../../sampleData';
-import ProjectType from '../../type/project.type';
+import { projects } from '../../../sampleData';
+import ProjectType from '../../../type/project.type';
 
 const ProjectSchema: GraphQLFieldConfig<any, any, any> = {
     type: ProjectType,
