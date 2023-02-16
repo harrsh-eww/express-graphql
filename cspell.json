@@ -4,8 +4,10 @@
     "dictionaryDefinitions": [],
     "dictionaries": [],
     "words": [
+        "graphiql",
         "Parens",
-        "pino"
+        "pino",
+        "QLID"
     ],
     "ignoreWords": [],
     "import": []

@@ -6,6 +6,8 @@
     "author": "Harrsh Patel <dev.harrsh@gmail.com>",
     "license": "MIT",
     "scripts": {
+        "dev": "ts-node-dev --respawn --transpile-only --exit-child src/app.ts | pino-pretty -t='SYS:ddd mmm dd yyyy h:MM:ss TT'",
+        "start": "node dist/app.js",
         "format": "prettier --write \"**/*.+(ts|json|yml|yaml|md|hbs)\""
     },
     "dependencies": {
@@ -13,6 +15,8 @@
         "cors": "^2.8.5",
         "dotenv": "^16.0.3",
         "express": "^4.18.2",
+        "express-graphql": "^0.12.0",
+        "graphql": "^16.6.0",
         "helmet": "^6.0.1",
         "lodash": "^4.17.21",
         "pino": "^8.10.0"
