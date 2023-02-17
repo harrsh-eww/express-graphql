@@ -1,11 +1,15 @@
-import { GraphQLFieldConfig, GraphQLList } from 'graphql';
+import { GraphQLFieldConfig } from 'graphql';
 import { projects } from '../../../sampleData';
-import ProjectType from '../../../type/project.type';
+import ProjectListType from '../../../type/project/projectList.type';
 
 const ProjectsSchema: GraphQLFieldConfig<any, any, any> = {
-    type: new GraphQLList(ProjectType),
+    type: ProjectListType,
     resolve(parent, args) {
-        return projects;
+        return {
+            result: projects,
+            message: 'List fetched successfully',
+            status: 200,
+        };
     },
 };
 

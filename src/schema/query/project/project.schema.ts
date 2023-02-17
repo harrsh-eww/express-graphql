@@ -1,6 +1,6 @@
 import { GraphQLFieldConfig, GraphQLID } from 'graphql';
 import { projects } from '../../../sampleData';
-import ProjectType from '../../../type/project.type';
+import ProjectType from '../../../type/project/project.type';
 
 const ProjectSchema: GraphQLFieldConfig<any, any, any> = {
     type: ProjectType,
@@ -10,7 +10,11 @@ const ProjectSchema: GraphQLFieldConfig<any, any, any> = {
         },
     },
     resolve(parent, args) {
-        return projects.find((project) => project.id === args.id);
+        return {
+            result: projects.find((project) => project.id === args.id),
+            message: 'Details fetched successfully',
+            status: 200,
+        };
     },
 };
 
