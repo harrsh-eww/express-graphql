@@ -3,10 +3,12 @@ import { graphqlHTTP } from 'express-graphql';
 import env from './env';
 import VerifyJwt from './middlewares/verifyJwt';
 import schema from './schema/schema';
+import cors from 'cors';
 
 const app = express();
 const PORT = env.app.port;
 
+app.use(cors());
 app.use(VerifyJwt);
 
 app.use(
