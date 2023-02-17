@@ -26,6 +26,8 @@ const CreateClientSchema: GraphQLFieldConfig<any, any, any> = {
     async resolve(parent, args) {
         const { name, contactNumber, email, password } = args;
 
+        console.log(parent.request.user);
+
         const existingClient = await prisma.client.findFirst({
             where: {
                 AND: {
