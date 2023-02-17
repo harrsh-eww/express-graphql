@@ -1,5 +1,4 @@
 import { GraphQLID, GraphQLObjectType, GraphQLString } from 'graphql';
-import ClientRelationSchema from '../../schema/query/client/clientRelation.schema';
 
 const ProjectDataType = new GraphQLObjectType({
     name: 'ProjectData',
@@ -16,7 +15,6 @@ const ProjectDataType = new GraphQLObjectType({
         status: {
             type: GraphQLString,
         },
-        clientId: ClientRelationSchema,
     }),
 });
 
